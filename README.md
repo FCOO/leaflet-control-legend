@@ -27,3 +27,8 @@ Example usage:
             lastUpdated: moment(new Date)
         });
 
+## Attribution
+Original code based on:
+
+https://github.com/buche/leaflet-openweathermap
+
