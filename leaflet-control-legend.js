@@ -34,6 +34,7 @@ L.Control.Legend = L.Control.extend({
 	removeLegend: function(legendId) {
 		if (typeof this.legendOptions[legendId] != 'undefined') {
 			delete this.legendOptions[legendId];
+		        this._legendCounter--;
 		}
 		// reset counter if no legend is in collection
 		var containerEmpty = true;
