@@ -43,7 +43,7 @@ L.Control.Legend = L.Control.extend({
 			break;
 		}
 		if (containerEmpty) {
-			this.legendOptions = 0;
+			this.legendOptions = [];
 			this._container.style.display = 'none';
 		}
 		this._redrawLegend();
