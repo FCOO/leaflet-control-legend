@@ -104,6 +104,7 @@ L.Control.Legend = L.Control.extend({
         _: function(key, lang) {
                 var i18n = {
                         en: {
+                                  'Significant wave height of combined wind waves and swell': 'Wave height',
                                   'degC': '&deg;C',
                                   'Temp.': 'Temperature'
                         }
@@ -117,14 +118,21 @@ L.Control.Legend = L.Control.extend({
                                   'Temperature': 'Temperatur',
                                   'Temp.': 'Temperatur',
                                   'Salinity': 'Salinitet',
+                                  'Sea surface temperature': 'Temperatur',
+                                  'Sea surface salinity': 'Salinitet',
                                   'Wind speed': 'Vind (fart)',
-                                  'Wind': 'Vind (fart)',
+                                  'Visibility': 'Sigtbarhed',
+                                  'Air temperature (2m)': '2 meter temperatur',
+                                  'Sea ice concentration': 'Haviskoncentration',
+                                  'Visibility': 'Sigtbarhed',
                                   'Total precipitation flux': 'Nedbør',
                                   '2 metre temperature': '2 meter temperatur',
                                   'Total cloud cover': 'Skydække',
+                                  'Significant wave height of combined wind waves and swell': 'Bølgehøjde',
                                   'mm/hour': 'mm/time',
                                   'degC': '&deg;C',
                                   'knots': 'knob',
+                                  'fraction': 'fraktion',
                                   'meters': 'meter'
                         }
                 };
