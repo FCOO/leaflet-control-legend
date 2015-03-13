@@ -121,6 +121,7 @@ L.Control.Legend = L.Control.extend({
                                   'Sea surface temperature': 'Temperatur',
                                   'Sea surface salinity': 'Salinitet',
                                   'Wind speed': 'Vind (fart)',
+                                  'Wind': 'Vind (fart)',
                                   'Visibility': 'Sigtbarhed',
                                   'Air temperature (2m)': '2 meter temperatur',
                                   'Sea ice concentration': 'Haviskoncentration',
