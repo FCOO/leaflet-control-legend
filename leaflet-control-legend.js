@@ -118,6 +118,7 @@ L.Control.Legend = L.Control.extend({
                                   'Temp.': 'Temperatur',
                                   'Salinity': 'Salinitet',
                                   'Wind speed': 'Vind (fart)',
+                                  'Wind': 'Vind (fart)',
                                   'Total precipitation flux': 'Nedbør',
                                   '2 metre temperature': '2 meter temperatur',
                                   'Total cloud cover': 'Skydække',
