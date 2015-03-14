@@ -64,7 +64,6 @@
                 var attribution = this.legendOptions[idx].attribution;
                 var lastUpdated = this.legendOptions[idx].lastUpdated;
                 var longName = this.legendOptions[idx].longName;
-                console.log(longName);
                 var units = this.legendOptions[idx].units;
                 units = this._(units, lang);
                 var item = L.DomUtil.create('div', 'fcoo-legend-item', this._container);
