@@ -1,7 +1,7 @@
 (function (){
     "use strict";
     /*jslint browser: true*/
-    /*global $, L, console*/
+    /*global L, console*/
 
     /**
      * A Leaflet control for showing one or more legends. Each legend contains
@@ -14,7 +14,7 @@
             language: "en"
         },
             
-            legendOptions: [],
+        legendOptions: [],
 
         initialize: function(map, options) {
             L.Util.setOptions(this, options);
@@ -64,6 +64,7 @@
                 var attribution = this.legendOptions[idx].attribution;
                 var lastUpdated = this.legendOptions[idx].lastUpdated;
                 var longName = this.legendOptions[idx].longName;
+                console.log(longName);
                 var units = this.legendOptions[idx].units;
                 units = this._(units, lang);
                 var item = L.DomUtil.create('div', 'fcoo-legend-item', this._container);
@@ -74,22 +75,22 @@
                     item.style.marginLeft = '10px';
                 }
                 var leginner = '<img src="' + imgUrl + '" border="0" height="50" width="250" />';
-                if (longName !== null) {
+                if (longName !== undefined) {
                     var longNameCap =
                         longName.charAt(0).toUpperCase() +
                         longName.slice(1);
                     longNameCap = this._(longNameCap, lang);
                     leginner = leginner + '<br />' + longNameCap;
-                    if (units !== null) {
+                    if (units !== undefined) {
                         leginner = leginner + ' [' + units + ']';
                     }
                 }
-                if (attribution !== null) {
+                if (attribution !== undefined) {
                     var source = this._('Source', lang);
                     leginner = leginner + '<br />' + source + ': ' +
                                attribution;
                 }
-                if (lastUpdated !== null) {
+                if (lastUpdated !== undefined) {
                     var luString = this._('Last updated', lang);
                     leginner = leginner + '<br />' + luString +
                         ': ' +
