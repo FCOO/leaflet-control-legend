@@ -73,7 +73,7 @@
                 } else {
                     item.style.marginLeft = '10px';
                 }
-                var leginner = '<img src="' + imgUrl + '" border="0" height="50" width="250" />';
+                var leginner = '<img src="' + imgUrl + '" border="0" height="40" width="250" />';
                 if (longName !== undefined) {
                     var longNameCap =
                         longName.charAt(0).toUpperCase() +

@@ -1,5 +1,6 @@
 .fcoo-legend-item {
 	background-color: white;
+    padding-top: 4px;
 	border: 1px solid darkgray;
 	text-align: center;
 }
