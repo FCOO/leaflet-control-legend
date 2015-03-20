@@ -14,7 +14,7 @@
             language: "en"
         },
             
-        legendOptions: [],
+        legendOptions: new Object(),
 
         initialize: function(map, options) {
             L.Util.setOptions(this, options);
@@ -39,7 +39,6 @@
         removeLegend: function(legendId) {
             if (typeof this.legendOptions[legendId] != 'undefined') {
                 delete this.legendOptions[legendId];
-                this._legendCounter--;
             }
             // reset counter if no legend is in collection
             var containerEmpty = true;
@@ -48,7 +47,7 @@
                 break;
             }
             if (containerEmpty) {
-                this.legendOptions = [];
+                this.legendOptions = new Object();
                 this._container.style.display = 'none';
             }
             this._redrawLegend();
