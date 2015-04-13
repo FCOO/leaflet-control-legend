@@ -79,7 +79,7 @@
                         longName.slice(1);
                     longNameCap = this._(longNameCap, lang);
                     leginner = leginner + '<br />' + longNameCap;
-                    if (units !== undefined) {
+                    if (units !== undefined && units != '') {
                         leginner = leginner + ' [' + units + ']';
                     }
                 }
