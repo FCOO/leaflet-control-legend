@@ -72,7 +72,11 @@
                 } else {
                     item.style.marginLeft = '10px';
                 }
-                var leginner = '<img src="' + imgUrl + '" border="0" height="40" width="250" />';
+                if (L.Browser.mobile) {
+                    var leginner = '<img src="' + imgUrl + '" border="0" height="24" width="150" />';
+                } else {
+                    var leginner = '<img src="' + imgUrl + '" border="0" height="40" width="250" />';
+                }
                 if (longName !== undefined) {
                     var longNameCap =
                         longName.charAt(0).toUpperCase() +
@@ -83,16 +87,18 @@
                         leginner = leginner + ' [' + units + ']';
                     }
                 }
-                if (attribution !== undefined) {
-                    var source = this._('Source', lang);
-                    leginner = leginner + '<br />' + source + ': ' +
-                               attribution;
-                }
-                if (lastUpdated !== undefined) {
-                    var luString = this._('Last updated', lang);
-                    leginner = leginner + '<br />' + luString +
-                        ': ' +
-                        lastUpdated.utc().format('YYYY-MM-DDTHH:mm') + ' UTC';
+                if (! L.Browser.mobile) {
+                    if (attribution !== undefined) {
+                        var source = this._('Source', lang);
+                        leginner = leginner + '<br />' + source + ': ' +
+                                   attribution;
+                    }
+                    if (lastUpdated !== undefined) {
+                        var luString = this._('Last updated', lang);
+                        leginner = leginner + '<br />' + luString +
+                            ': ' +
+                            lastUpdated.utc().format('YYYY-MM-DDTHH:mm') + ' UTC';
+                    }
                 }
                 item.innerHTML = leginner;
                 var br = L.DomUtil.create('br', '', this._container);
