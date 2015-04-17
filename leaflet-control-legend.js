@@ -87,12 +87,12 @@
                         leginner = leginner + ' [' + units + ']';
                     }
                 }
+                if (attribution !== undefined) {
+                    var source = this._('Source', lang);
+                    leginner = leginner + '<br />' + source + ': ' +
+                               attribution;
+                }
                 if (! L.Browser.mobile) {
-                    if (attribution !== undefined) {
-                        var source = this._('Source', lang);
-                        leginner = leginner + '<br />' + source + ': ' +
-                                   attribution;
-                    }
                     if (lastUpdated !== undefined) {
                         var luString = this._('Last updated', lang);
                         leginner = leginner + '<br />' + luString +
