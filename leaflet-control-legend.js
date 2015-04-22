@@ -14,7 +14,7 @@
             language: "en"
         },
             
-        legendOptions: new Object(),
+        legendOptions: {},
 
         initialize: function(map, options) {
             L.Util.setOptions(this, options);
@@ -22,6 +22,13 @@
             this._container = L.DomUtil.create('div', 'fcoo-legend-container');
             this._container.style.display = 'none';
             this._legendCounter = 0;
+            if (mediaQueriesSupported()) {
+                var mq = window.matchMedia('screen and (max-width: 640px)');
+                this._mobile = mq.matches;
+            } else {
+                // Assume mobile
+                this._mobile = true;
+            }
         },
 
         onAdd: function(map) {
@@ -47,7 +54,7 @@
                 break;
             }
             if (containerEmpty) {
-                this.legendOptions = new Object();
+                this.legendOptions = {};
                 this._container.style.display = 'none';
             }
             this._redrawLegend();
@@ -72,10 +79,11 @@
                 } else {
                     item.style.marginLeft = '10px';
                 }
-                if (L.Browser.mobile) {
-                    var leginner = '<img src="' + imgUrl + '" border="0" height="24" width="150" />';
+                var leginner;
+                if (this._mobile) {
+                    leginner = '<img src="' + imgUrl + '" border="0" height="24" width="150" />';
                 } else {
-                    var leginner = '<img src="' + imgUrl + '" border="0" height="40" width="250" />';
+                    leginner = '<img src="' + imgUrl + '" border="0" height="40" width="250" />';
                 }
                 if (longName !== undefined) {
                     var longNameCap =
@@ -83,7 +91,7 @@
                         longName.slice(1);
                     longNameCap = this._(longNameCap, lang);
                     leginner = leginner + '<br />' + longNameCap;
-                    if (units !== undefined && units != '') {
+                    if (units !== undefined && units !== '') {
                         leginner = leginner + ' [' + units + ']';
                     }
                 }
@@ -92,7 +100,7 @@
                     leginner = leginner + '<br />' + source + ': ' +
                                attribution;
                 }
-                if (! L.Browser.mobile) {
+                if (! this._mobile) {
                     if (lastUpdated !== undefined) {
                         var luString = this._('Last updated', lang);
                         leginner = leginner + '<br />' + luString +
@@ -155,5 +163,10 @@
             return key;
         }
     });
+
+    function mediaQueriesSupported() {
+            return (typeof window.matchMedia != "undefined" || typeof window.msMatchMedia != "undefined");
+    }
+
 })();
 
