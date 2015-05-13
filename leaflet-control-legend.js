@@ -22,12 +22,10 @@
             this._container = L.DomUtil.create('div', 'fcoo-legend-container');
             this._container.style.display = 'none';
             this._legendCounter = 0;
+            this._mobile = false;
             if (mediaQueriesSupported()) {
                 var mq = window.matchMedia('screen and (max-width: 640px)');
                 this._mobile = mq.matches;
-            } else {
-                // Assume mobile
-                this._mobile = true;
             }
         },
 
