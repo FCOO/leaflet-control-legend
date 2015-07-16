@@ -24,7 +24,7 @@
             this._legendCounter = 0;
             this._mobile = false;
             if (mediaQueriesSupported()) {
-                var mq = window.matchMedia('screen and (max-width: 640px)');
+                var mq = window.matchMedia('screen and (max-width: 640px), screen and (max-height: 640px)');
                 this._mobile = mq.matches;
             }
         },
