@@ -22,11 +22,6 @@
             this._container = L.DomUtil.create('div', 'fcoo-legend-container');
             this._container.style.display = 'none';
             this._legendCounter = 0;
-            this._mobile = false;
-            if (mediaQueriesSupported()) {
-                var mq = window.matchMedia('screen and (max-width: 640px), screen and (max-height: 640px)');
-                this._mobile = mq.matches;
-            }
         },
 
         onAdd: function(map) {
@@ -77,36 +72,33 @@
                 } else {
                     item.style.marginLeft = '10px';
                 }
-                var leginner;
-                if (this._mobile) {
-                    leginner = '<img src="' + imgUrl + '" border="0" height="24" width="150" />';
-                } else {
-                    leginner = '<img src="' + imgUrl + '" border="0" height="40" width="250" />';
-                }
+                var item_img = L.DomUtil.create('img', 'fcoo-legend-item-image', item);
+                item_img.src = imgUrl;
+
+                var leginner = '';
+                var item_text = L.DomUtil.create('div', 'fcoo-legend-item-text', item);
                 if (longName !== undefined) {
                     var longNameCap =
                         longName.charAt(0).toUpperCase() +
                         longName.slice(1);
                     longNameCap = this._(longNameCap, lang);
-                    leginner = leginner + '<br />' + longNameCap;
+                    var lnameP = L.DomUtil.create('p', 'fcoo-legend-item-text-p', item_text);
                     if (units !== undefined && units !== '') {
-                        leginner = leginner + ' [' + units + ']';
+                        longNameCap = longNameCap + ' [' + units + ']';
                     }
+                    lnameP.innerHTML = longNameCap;
                 }
                 if (attribution !== undefined) {
-                    var source = this._('Source', lang);
-                    leginner = leginner + '<br />' + source + ': ' +
-                               attribution;
+                    var source = this._('Source', lang) + ': ' + attribution;
+                    var attrP = L.DomUtil.create('p', 'fcoo-legend-item-text-p', item_text);
+                    attrP.innerHTML = source;
                 }
-                if (! this._mobile) {
-                    if (lastUpdated !== undefined) {
-                        var luString = this._('Last updated', lang);
-                        leginner = leginner + '<br />' + luString +
-                            ': ' +
-                            lastUpdated.utc().format('YYYY-MM-DDTHH:mm') + ' UTC';
-                    }
+                if (lastUpdated !== undefined) {
+                    var luString = this._('Updated', lang) + ': ' +
+                        lastUpdated.utc().format('YYYY-MM-DDTHH:mm') + ' UTC';
+                    var lastP = L.DomUtil.create('p', 'fcoo-legend-item-text-p', item_text);
+                    lastP.innerHTML = luString;
                 }
-                item.innerHTML = leginner;
                 var br = L.DomUtil.create('br', '', this._container);
             }
         },
@@ -126,7 +118,7 @@
                 },
                 da: {
                       'Source': 'Kilde',
-                      'Last updated': 'Sidst opdateret',
+                      'Updated': 'Opdateret',
                       'Wave height': 'Bølgehøjde',
                       'Mean wave period': 'Bølgeperiode',
                       'Vel.': 'Strøm (fart)',
@@ -161,10 +153,5 @@
             return key;
         }
     });
-
-    function mediaQueriesSupported() {
-            return (typeof window.matchMedia != "undefined" || typeof window.msMatchMedia != "undefined");
-    }
-
 })();
 

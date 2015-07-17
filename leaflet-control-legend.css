@@ -1,6 +1,24 @@
 .fcoo-legend-item {
 	background-color: white;
-    padding-top: 4px;
+    padding-top: 2px;
 	border: 1px solid darkgray;
 	text-align: center;
+}
+
+p.fcoo-legend-item-text-p {
+    margin: 0px;
+}
+
+img.fcoo-legend-item-image {
+    height: 24px;
+    width: 150;
+    border: 0px;
+    margin: 0px;
+}
+
+@media screen and (min-width: 641px) and (min-height: 641px) {
+    img.fcoo-legend-item-image {
+        height: 40px;
+        width: 250;
+    }
 }
