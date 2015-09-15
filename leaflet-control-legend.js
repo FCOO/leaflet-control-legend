@@ -132,6 +132,8 @@
                       'Wind': 'Vindstyrke',
                       'Air temperature (2m)': '2 meter temperatur',
                       'Sea ice concentration': 'Haviskoncentration',
+                      'Sea ice thickness': 'Havistykkelse',
+                      'Sea ice drift speed': 'Havisdrifthastighed',
                       'Visibility': 'Sigtbarhed',
                       'Total precipitation flux': 'Nedbør',
                       '2 metre temperature': '2 meter temperatur',
