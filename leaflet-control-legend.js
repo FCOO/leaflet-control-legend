@@ -92,15 +92,16 @@
                 units = that._(units, lang);
                 var item = L.DomUtil.create('div', 'fcoo-legend-item', that._container);
                 item.style.cssFloat = cssFloat;
-                var itemDiv = L.DomUtil.create('div', 'fcoo-legend-item-div', item);
+                var itemMainSpan = L.DomUtil.create('span', '', item)
+                var itemDiv = L.DomUtil.create('div', 'fcoo-legend-item-div', itemMainSpan);
                 var item_img = L.DomUtil.create('img', 'fcoo-legend-item-image', itemDiv);
                 item_img.src = imgUrl;
 
                 var leginner = '';
-                var item_text = L.DomUtil.create('div', 'fcoo-legend-item-text', item);
+                var item_text = L.DomUtil.create('div', 'fcoo-legend-item-text', itemMainSpan);
 
                 var lnameP = L.DomUtil.create('p', 'fcoo-legend-item-text-p', item_text);
-                var btn = L.DomUtil.create('i', 'fa-caret-square-o-down fa', lnameP);
+                var btn = L.DomUtil.create('i', 'fa-caret-square-o-down fa fcoo-legend-item-compress', lnameP);
                 btn.innerHTML = '&nbsp;&nbsp;';
                 if (longName !== undefined) {
                     var longNameCap =
@@ -150,8 +151,8 @@
                 }
                 var br = L.DomUtil.create('br', '', that._container);
 
-                $(lnameP).click(function(){
-                    $(this).find('.fa').toggleClass('fa-caret-square-o-right');
+                $(itemMainSpan).click(function(){
+                    $(this).find('.fcoo-legend-item-compress').toggleClass('fa-caret-square-o-right');
                     $(item_text_extra).slideToggle();
                 });
                 if (that.options.collapsedInfo) {
