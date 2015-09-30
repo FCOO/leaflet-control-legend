@@ -150,8 +150,8 @@
                 }
                 var br = L.DomUtil.create('br', '', that._container);
 
-                $(btn).click(function(){
-                    $(this).toggleClass('fa-caret-square-o-right');
+                $(lnameP).click(function(){
+                    $(this).find('.fa').toggleClass('fa-caret-square-o-right');
                     $(item_text_extra).slideToggle();
                 });
                 if (that.options.collapsedInfo) {
