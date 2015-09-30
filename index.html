@@ -5,10 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
     <link rel="stylesheet" href="leaflet-control-legend.css" />
 </head>
 <body>
     <div id="map" style="width: 800px; height: 600px"></div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="leaflet-control-legend.js" charset="UTF-8"></script>
@@ -18,7 +20,7 @@
             maxZoom: 18,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors</a>'
         }).addTo(map);
-        var legendControl = new L.Control.Legend;
+        var legendControl = new L.Control.Legend({collapsedInfo: true});
         map.addControl(legendControl);
         legendControl.addLegend({
             imageUrl: 'images/colorbar1.png',
