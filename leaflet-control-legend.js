@@ -86,6 +86,7 @@
                 var imgUrl = options.imageUrl;
                 var attribution = options.attribution;
                 var lastUpdated = options.lastUpdated;
+                var updatesPerDay = options.updatesPerDay;
                 var epoch = options.epoch;
                 var longName = options.longName;
                 var units = options.units;
@@ -145,9 +146,16 @@
                 }
                 if (epoch !== undefined) {
                     var eString = that._('Analysis', lang) + ': ' +
-                        epoch.utc().format('YYYY-MM-DDTHH:mm') + ' UTC';
+                        dateAsHTML(epoch, lang, that.options.timezone);
                     var epochP = L.DomUtil.create('p', 'fcoo-legend-item-text-p', item_text_extra);
                     epochP.innerHTML = eString;
+                }
+                if (lastUpdated !== undefined && updatesPerDay !== undefined) {
+                    var nextUpdate = moment(lastUpdated).add(24.0/updatesPerDay, 'hours');
+                    var neString = that._('Expected update', lang) + ': ' +
+                        dateAsHTML(nextUpdate, lang, that.options.timezone);
+                    var nextP = L.DomUtil.create('p', 'fcoo-legend-item-text-p', item_text_extra);
+                    nextP.innerHTML = neString;
                 }
                 var br = L.DomUtil.create('br', '', that._container);
 
@@ -178,6 +186,7 @@
                       'Source': 'Kilde',
                       'Updated': 'Opdateret',
                       'Analysis': 'Analyse',
+                      'Expected update': 'Forventes opdateret',
                       'Wave height': 'Bølgehøjde',
                       'Mean wave period': 'Bølgeperiode',
                       'Vel.': 'Strømstyrke',
