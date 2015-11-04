@@ -31,7 +31,7 @@ img.fcoo-legend-item-image {
 .fcoo-legend-item-btn-minimize.btn-plus {
 }
 
-@media screen and (min-width: 641px) and (min-height: 641px) {
+@media screen and (orientation: landscape) and (min-width: 641px) and (min-height: 481px), screen and (orientation: portrait) and (min-width: 481px) and (min-height: 641px) {
     img.fcoo-legend-item-image {
         height: 40px;
         width: 250;

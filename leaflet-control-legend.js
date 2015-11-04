@@ -24,7 +24,7 @@
             if (this.options.collapsedInfo === null) {
                 this.options.collapsedInfo = true;
                 if (typeof window.matchMedia != "undefined" || typeof window.msMatchMedia != "undefined") {
-                    var mq = window.matchMedia('screen and (min-width: 641px) and (min-height: 641px)');
+                    var mq = window.matchMedia('screen and (orientation: landscape) and (min-width: 641px) and (min-height: 481px), screen and (orientation: portrait) and (min-width: 481px) and (min-height: 641px)');
                     if (mq.matches) {
                         this.options.collapsedInfo = false;
                     }
