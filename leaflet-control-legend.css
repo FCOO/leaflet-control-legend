@@ -10,6 +10,7 @@
     padding-top: 2px;
 	border: 1px solid darkgray;
     float: right;
+    clear: both;
 	text-align: center;
     margin: 0px;
 }
