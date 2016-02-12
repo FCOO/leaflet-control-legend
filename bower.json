@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.4",
+    "jquery": "latest",
     "fontawesome": "~4.4.0"
   }
 }
