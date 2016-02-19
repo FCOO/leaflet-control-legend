@@ -1,6 +1,6 @@
 {
   "name": "leaflet-control-legend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/FCOO/leaflet-control-legend",
   "authors": [
     "Jesper Larsen jla@fcoo.dk"
@@ -17,7 +17,7 @@
   "dependencies": {
     "leaflet": "latest",
     "fcoo-fontawesome": "fcoo/fcoo-fontawesome#^1.0.0",
-    "jquery": "latest",
+    "jquery": "^2.2.0",
     "moment": "^2.11.2"
   },
   "devDependencies": {
