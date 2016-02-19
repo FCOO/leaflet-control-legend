@@ -1,12 +1,30 @@
 {
   "name": "leaflet-control-legend",
-  "main": "leaflet-control-legend.js",
-  "version": "1.0.0",
-  "homepage": "https://github.com/jblarsen/leaflet-control-legend",
+  "version": "0.0.0",
+  "homepage": "https://github.com/FCOO/leaflet-control-legend",
   "authors": [
-    "Jesper Baasch-Larsen <jla@fcoo.dk>"
+    "Jesper Larsen jla@fcoo.dk"
   ],
-  "description": "Legend for leaflet layers",
+  "description": "",
+  "main": [
+    "dist/leaflet-control-legend.min.js",
+    "dist/leaflet-control-legend.min.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FCOO/leaflet-control-legend.git"
+  },
+  "dependencies": {
+    "leaflet": "latest",
+    "fcoo-fontawesome": "fcoo/fcoo-fontawesome#^1.0.0",
+    "jquery": "latest",
+    "moment": "^2.11.2"
+  },
+  "devDependencies": {
+    "bourbon": "latest",
+    "modernizr-mixin": "latest",
+    "mathsass": "latest"
+  },
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -15,8 +33,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "jquery": "latest",
-    "fontawesome": "~4.4.0"
-  }
+  "moduleType": [
+    "es6"
+  ]
 }

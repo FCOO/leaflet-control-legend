@@ -1,21 +1,19 @@
 # leaflet-control-legend
+>
+
+
+## Description
 Leaflet control for legends. Legends can be added to the control.
 
+## Installation
+### bower
+`bower install https://github.com/FCOO/leaflet-control-legend.git --save`
+
 ## Demo
-http://jblarsen.github.io/leaflet-control-legend/
-
-## Requirements
-Leaflet and moment.
-
-http://leafletjs.com/
-
-http://momentjs.com/
+http://FCOO.github.io/leaflet-control-legend/demo/ 
 
 ## Usage
-Install the dependencies and include the Javascript and CSS
-file in this repository in your application.
 
-Example usage:
 
         var legendControl = new L.Control.Legend;
         map.addControl(legendControl);
@@ -27,8 +25,27 @@ Example usage:
             lastUpdated: moment(new Date)
         });
 
-## Attribution
-Original code based on:
 
-https://github.com/buche/leaflet-openweathermap
+
+## Copyright and License
+This plugin is licensed under the [MIT license](https://github.com/FCOO/leaflet-control-legend/LICENSE).
+
+Copyright (c) 2015 [FCOO](https://github.com/FCOO)
+
+## Contact information
+
+Jesper Larsen jla@fcoo.dk
+
+
+## Credits and acknowledgements
+
+Original code based on: https://github.com/buche/leaflet-openweathermap
+
+## Known bugs
+
+## Troubleshooting
+
+## Changelog
+
+
 
