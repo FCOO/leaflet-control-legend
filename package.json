@@ -1,13 +1,13 @@
 {
-  "name"		: "leaflet-control-legend",
-  "version"	: "0.0.0",
+  "name": "leaflet-control-legend",
+  "version": "1.0.0",
   "homepage": "https://github.com/FCOO/leaflet-control-legend",
-	"author": "Jesper Larsen jla@fcoo.dk",
-	"description": "package.json is only use for building the package. see bower.json for more info",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/FCOO/leaflet-control-legend.git"
-	},
+  "author": "Jesper Larsen jla@fcoo.dk",
+  "description": "package.json is only use for building the package. see bower.json for more info",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FCOO/leaflet-control-legend.git"
+  },
   "devDependencies": {
     "grunt-bower-concat": "~1.0.0",
     "grunt-continue": "~0.1.0",

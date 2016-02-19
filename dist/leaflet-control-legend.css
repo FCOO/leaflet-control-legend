@@ -1,0 +1,38 @@
+/***********************************************
+	leaflet-control-legend.scss, 
+
+	(c) 2016, FCOO
+
+	https://github.com/FCOO/leaflet-control-legend
+	https://github.com/FCOO
+
+
+************************************************/
+.fcoo-legend-container {
+  background-color: white;
+  border: 1px solid darkgray;
+  text-align: center;
+  float: left; }
+
+.fcoo-legend-item {
+  background-color: white;
+  padding-top: 2px;
+  border: 1px solid darkgray;
+  float: right;
+  clear: both;
+  text-align: center;
+  margin: 0px; }
+
+p.fcoo-legend-item-text-p {
+  margin: 0px; }
+
+img.fcoo-legend-item-image {
+  height: 24px;
+  width: 150;
+  border: 0px;
+  margin: 0px; }
+
+@media screen and (orientation: landscape) and (min-width: 641px) and (min-height: 481px), screen and (orientation: portrait) and (min-width: 481px) and (min-height: 641px) {
+  img.fcoo-legend-item-image {
+    height: 40px;
+    width: 250; } }
