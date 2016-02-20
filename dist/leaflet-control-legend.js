@@ -17,7 +17,7 @@
      */
     L.Control.Legend = L.Control.extend({
         options: {
-						VERSION: "1.0.1",
+						VERSION: "1.0.2",
             position: "bottomleft",
             language: "en",
             timezone: 'local',
