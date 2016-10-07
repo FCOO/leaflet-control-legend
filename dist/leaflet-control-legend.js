@@ -7,7 +7,7 @@
 	https://github.com/FCOO
 
 ****************************************************************************/
-;(function ($, L, window, document, undefined) {
+(function ($, L, window, document, undefined) {
 	"use strict";
 
     /**
@@ -17,7 +17,7 @@
      */
     L.Control.Legend = L.Control.extend({
         options: {
-						VERSION: "1.0.2",
+						VERSION: "1.0.3",
             position: "bottomleft",
             language: "en",
             timezone: 'local',
